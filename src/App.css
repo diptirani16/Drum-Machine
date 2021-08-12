@@ -1,38 +1,153 @@
 .App {
   text-align: center;
+  background-color: #8d8d8d;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#drum-machine{
+  background-color: #b3b3b3;
+  width: 50vw;
+  height: 50vh;
+  border: 5px solid #efa42d;
+  margin: 20vh 25vw;
+  display: flex;
+  justify-content: space-between;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.drum-pad {
+  width: 6vw;
+  height: 12vh;
+  margin: 14%;
+  background-color: #8d8d8d;
+  box-shadow: black 3px 3px 5px;
+  font-weight: 900;
+  margin-left: 10px;
+  border-radius: 5px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.drum-pad-container{
+  display: flex;
+  margin: 2%;
+  width: 20vw;
+}
+.display-container {
+  margin: 5%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+#display {
+  width: 14vw;
+  height: 7vh;
+  background-color: #8d8d8d;
+  padding-top: 10px;
+  margin-top: 20px; 
+  font-weight: 900;
+}
+#power,#display-area,#customRange1 {
+  height: 20vh;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* Switch */
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 17px;
+  width: 21px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #315dfb;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: black;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+@media screen and (max-width: 480px) {
+  #drum-machine{
+    background-color: #b3b3b3;
+    width: 80vw;
+    height: 79vh;
+    border: 5px solid #efa42d;
+    margin: 6vh 10vw;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .drum-pad {
+    width: 20vw;
+  }
+  #power,#display-area,#customRange1 {
+    height: 10vh;
+  }
+  #display{
+    width: 55vw;
+    margin-left: 6vw;
+    padding-top: 8px;
+  }
+  
+}
+@media screen and (min-width: 481px) and (max-width: 780px) {
+  #drum-machine{
+    background-color: #b3b3b3;
+    width: 80vw;
+    height: 62vh;
+    border: 5px solid #efa42d;
+    margin: 13vh 10vw;
+    display: flex;
+    justify-content: space-between;
+  }
+  .drum-pad {
+    width: 12vw;
+    height: 15vh;
+  }
+  
+  #display{
+    width: 25vw;
+    margin-left: 0;
+    padding-top: 8px;
+  }
+  input{
+    margin: 0;
   }
 }
+
